@@ -19,6 +19,7 @@ public class GameManager : PersistentSingleton<GameManager>
         ScoreChanged.Raise();
 
         CurrentLevel.Value = 0;
+        Time.timeScale = 0.5f;
     }
 
     private void Update()

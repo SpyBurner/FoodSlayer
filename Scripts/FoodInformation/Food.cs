@@ -12,7 +12,10 @@ public class Food : MonoBehaviour
     public GameEvent ScoreChanged;
     public IntVariable CurrentScore;
 
+    public GameObject foodHolder;
+
     private Rigidbody rb;
+    private Collider col;
     private Vector2 gravity;
     private MeshFilter meshFilter;
 
@@ -25,6 +28,7 @@ public class Food : MonoBehaviour
         gravity = Vector2.down * 9.81f;
 
         meshFilter = GetComponent<MeshFilter>();
+        col = GetComponent<SphereCollider>();
     }
     public void Initialize(Vector3 speed, Vector3 rotSpeed)
     {
@@ -33,6 +37,9 @@ public class Food : MonoBehaviour
         rb.angularVelocity = rotSpeed;
 
         gameObject.GetComponent<MeshFilter>().mesh = info.mesh;
+        
+        col = GetComponent<SphereCollider>();
+        ((SphereCollider)col).radius *= info.scale;
     }
 
     private void Update()
@@ -44,33 +51,50 @@ public class Food : MonoBehaviour
     {
         if (!isCutable) return;
 
+        Vector3 splitForceDirection = Quaternion.Euler(0, 0, -90) * hitDirection;
+
         CurrentScore.Value += info.point;
         ScoreChanged.Raise();
 
+        //Cut generating
         GameObject otherHalf = GenerateCutPieces();
+        
+        //Get info
         Rigidbody otherRb = otherHalf.GetOrAddComponent<Rigidbody>();
-
         float meshYSize = meshFilter.mesh.bounds.extents.y * 2;
         
-        transform.right = otherHalf.transform.right = - hitDirection.normalized;
+        //Cut rotation
+        if (info.cutPlaneNormalVec == Vector3.up)
+        {
+            transform.right = otherHalf.transform.right = - hitDirection.normalized;
+        }
+        else if (info.cutPlaneNormalVec == Vector3.forward)
+        {
+            transform.forward = otherHalf.transform.forward = - splitForceDirection.normalized;
+        }
+        else
+        {
+            transform.right = otherHalf.transform.right = - splitForceDirection.normalized;
+        }
+        otherHalf.transform.Rotate(hitDirection, 180);
 
-        otherHalf.transform.Rotate(Vector3.forward, 180);
-
-        Vector3 splitForceDirection = Quaternion.Euler(0, 0, -90) * hitDirection;
-
+        //Cut position
         transform.position -= splitForceDirection.normalized * meshYSize;
         otherHalf.transform.position += splitForceDirection.normalized * meshYSize;
 
+
+        //Cut retain original velocity
         otherRb.angularVelocity = rb.angularVelocity;
         otherRb.velocity = rb.velocity;
 
+        //Cut add splitting
         rb.AddForce(-splitForceDirection * 50);
         otherRb.AddForce(splitForceDirection * 50);
     }
 
     private GameObject GenerateCutPieces()
     {
-        GameObject otherHalf = Instantiate(gameObject, transform.position, Quaternion.identity);
+        GameObject otherHalf = Instantiate(gameObject, transform.position, Quaternion.identity, foodHolder.transform);
         
         meshFilter.mesh = info.slicedMeshes[0];
         otherHalf.GetComponent<MeshFilter>().mesh = info.slicedMeshes[1];

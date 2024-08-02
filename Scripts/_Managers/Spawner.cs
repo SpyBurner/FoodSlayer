@@ -40,7 +40,6 @@ public class Spawner : MonoBehaviour
 
         holder = new GameObject();
         holder.name = "Food Holder";
-        holder = Instantiate(holder);
 
         spawnRate = config.spawnRate;
         spawnAmount = config.spawnAmount;
@@ -68,8 +67,6 @@ public class Spawner : MonoBehaviour
 
         spawnAmount = config.spawnAmount + config.spawnAmountInc * Level.Value;
         spawnAmount = Mathf.Min(spawnAmount, config.maxSpawnAmount);
-
-        Debug.Log(spawnRate + " " + spawnAmount);
     }
 
     private void AdvanceTimer()
@@ -121,6 +118,8 @@ public class Spawner : MonoBehaviour
 
         food.ScoreChanged = ScoreChanged;
         food.CurrentScore = CurrentScore;
+
+        food.foodHolder = holder;
     }
 
 }

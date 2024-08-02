@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af5c906417badd4c996b0ce56261014, type: 3}
-  m_Name: Coconut
+  m_Name: Apple
   m_EditorClassIdentifier: 
-  point: 10
-  mesh: {fileID: 745218288965529717, guid: 5a7c9c123cc77d94989b266d1da68ffa, type: 3}
+  point: 20
+  mesh: {fileID: -3645058858012553506, guid: e2b7f90ac7c0a7a47b916bda34c4cd64, type: 3}
   slicedMeshes:
-  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
-  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
-  scale: 0.8
+  - {fileID: 932811825096193042, guid: 040cdd097a25ee54ca863cb0f53caa15, type: 3}
+  - {fileID: 932811825096193042, guid: a5170e4e5dca1dc4a92e848f431ce08e, type: 3}
+  scale: 1
+  cutPlaneNormalVec: {x: 1, y: 0, z: 0}

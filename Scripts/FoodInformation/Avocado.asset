@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af5c906417badd4c996b0ce56261014, type: 3}
-  m_Name: Coconut
+  m_Name: Avocado
   m_EditorClassIdentifier: 
-  point: 10
-  mesh: {fileID: 745218288965529717, guid: 5a7c9c123cc77d94989b266d1da68ffa, type: 3}
+  point: 20
+  mesh: {fileID: 3055828139153084408, guid: 016adedb898ec5a4fbb353680bd0718d, type: 3}
   slicedMeshes:
-  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
-  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
-  scale: 0.8
+  - {fileID: -1059722790129114535, guid: a13b08b6949e6854ca3c68f597354205, type: 3}
+  - {fileID: -1059722790129114535, guid: a13b08b6949e6854ca3c68f597354205, type: 3}
+  scale: 1
+  cutPlaneNormalVec: {x: 1, y: 0, z: 0}

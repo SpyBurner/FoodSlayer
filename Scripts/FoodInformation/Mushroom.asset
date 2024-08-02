@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af5c906417badd4c996b0ce56261014, type: 3}
-  m_Name: Coconut
+  m_Name: Mushroom
   m_EditorClassIdentifier: 
-  point: 10
-  mesh: {fileID: 745218288965529717, guid: 5a7c9c123cc77d94989b266d1da68ffa, type: 3}
+  point: 50
+  mesh: {fileID: -7588155868070637639, guid: 2dec450cb4b7bfa46a36dd3e9debc96f, type: 3}
   slicedMeshes:
-  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
-  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
-  scale: 0.8
+  - {fileID: -4889993581187329437, guid: e9f904c977eb821429a214dbcf1397a1, type: 3}
+  - {fileID: -4889993581187329437, guid: e9f904c977eb821429a214dbcf1397a1, type: 3}
+  scale: 0.5
+  cutPlaneNormalVec: {x: 1, y: 0, z: 0}

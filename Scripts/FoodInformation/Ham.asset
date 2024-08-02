@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af5c906417badd4c996b0ce56261014, type: 3}
-  m_Name: Coconut
+  m_Name: Ham
   m_EditorClassIdentifier: 
-  point: 10
-  mesh: {fileID: 745218288965529717, guid: 5a7c9c123cc77d94989b266d1da68ffa, type: 3}
+  point: 5
+  mesh: {fileID: 9161984268042380430, guid: 0b10d77383155574a93d985c722036a2, type: 3}
   slicedMeshes:
-  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
-  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
-  scale: 0.8
+  - {fileID: 4354154126254062935, guid: 73cc46ed49d79e943ba1d1bfc29bdc9a, type: 3}
+  - {fileID: 4354154126254062935, guid: 73cc46ed49d79e943ba1d1bfc29bdc9a, type: 3}
+  scale: 1.5
+  cutPlaneNormalVec: {x: 0, y: 0, z: 1}
