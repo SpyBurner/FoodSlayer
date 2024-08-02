@@ -58,8 +58,6 @@ public class Food : MonoBehaviour
 
         Vector3 splitForceDirection = Quaternion.Euler(0, 0, -90) * hitDirection;
 
-        Debug.Log("Hit: " + hitDirection + " Split: " + splitForceDirection);
-
         transform.position -= splitForceDirection.normalized * meshYSize;
         otherHalf.transform.position += splitForceDirection.normalized * meshYSize;
 

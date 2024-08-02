@@ -1,7 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Game Config", menuName = "My assets")]
+[CreateAssetMenu(fileName = "New Game Config", menuName = "My assets/GameConfig")]
 public class GameConfig : ScriptableObject
 {
     [Header("Level")]
@@ -12,10 +12,12 @@ public class GameConfig : ScriptableObject
     [Header("Spawn rate")]
     public float spawnRate; //in seconds
     public float spawnRateInc;
+    public float maxSpawnRate;
 
     [Header("Spawn amount")]
     public float spawnAmount;
     public float spawnAmountInc;
+    public float maxSpawnAmount;
 
     [Header("Object init info")]
     public float initSpeedMin;

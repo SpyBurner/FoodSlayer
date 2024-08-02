@@ -600,16 +600,13 @@ MonoBehaviour:
   prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
   objInfo:
   - {fileID: 11400000, guid: 8de2428d29b833c4b8e71794f33ff131, type: 2}
+  config: {fileID: 11400000, guid: e166cc47f93cfd841a3eb7d8af509105, type: 2}
   spawnRate: 0.5
-  spawnRateInc: 0
   spawnAmount: 1
-  spawnAmountIncInterval: 0
-  initSpeedMin: 4
-  initSpeedMax: 5.5
-  initSpeedInc: 0
-  initRotSpeedMin: 1
-  initRotSpeedMax: 3
-  initAngleMax: 20
+  Level:
+    UseConstant: 0
+    ConstValue: 0
+    Variable: {fileID: 11400000, guid: 7862a8a10aa992648acda51084cb598e, type: 2}
   spawnTimer: 1.4329633
   spawnPos: {x: -0.3695985, y: 2, z: -1}
 --- !u!65 &765976903
@@ -849,6 +846,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreChanged: {fileID: 11400000, guid: 659cb4f1f8b5d8944aa0a0c7133422eb, type: 2}
   CurrentScore: {fileID: 11400000, guid: 2082f1063ff86e445b2a45cda9b33d9b, type: 2}
+  config: {fileID: 11400000, guid: e166cc47f93cfd841a3eb7d8af509105, type: 2}
+  CurrentLevel: {fileID: 11400000, guid: 7862a8a10aa992648acda51084cb598e, type: 2}
 --- !u!1 &1113537642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1290,7 @@ Canvas:
   m_GameObject: {fileID: 1810279845}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0

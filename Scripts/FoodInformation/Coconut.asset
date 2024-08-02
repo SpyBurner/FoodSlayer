@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af5c906417badd4c996b0ce56261014, type: 3}
   m_Name: Coconut
   m_EditorClassIdentifier: 
-  point: 5
+  point: 15
   mesh: {fileID: 745218288965529717, guid: 5a7c9c123cc77d94989b266d1da68ffa, type: 3}
   slicedMeshes:
   - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}

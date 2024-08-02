@@ -9,7 +9,6 @@ public class GameManager : PersistentSingleton<GameManager>
     public GameEvent ScoreChanged;
     public IntVariable CurrentScore;
 
-    //Level is referenced each update, no need for event
     [Header("Difficulty managing")]
     public GameConfig config;
     public IntVariable CurrentLevel;
@@ -24,6 +23,6 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void Update()
     {
-        CurrentLevel.Value = CurrentScore.Value % config.pointPerLevel;
+        CurrentLevel.Value = CurrentScore.Value / config.pointPerLevel;
     }
 }

@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour
     public GameConfig config;
     public float spawnRate; //in seconds
     public float spawnAmount;
+    public IntReference Level;
 
     private MeshRenderer meshRenderer;
     private float spawnBoundX;
@@ -47,16 +48,28 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
+        SpawnInfoUpdate();
         AdvanceTimer();
         //Check if it's time to spawn
         if (!TimeCheck()) return;
 
         //Time to spawn
-        for (int i = 0; i < spawnAmount; i++)
+        for (int i = 0; i < (int)spawnAmount; i++)
         {
             RandomizeSpawnInfo();
             Spawn();
         }
+    }
+
+    private void SpawnInfoUpdate()
+    {
+        spawnRate = config.spawnRate + config.spawnRateInc * Level.Value;
+        spawnRate = Mathf.Min(spawnRate, config.maxSpawnRate);
+
+        spawnAmount = config.spawnAmount + config.spawnAmountInc * Level.Value;
+        spawnAmount = Mathf.Min(spawnAmount, config.maxSpawnAmount);
+
+        Debug.Log(spawnRate + " " + spawnAmount);
     }
 
     private void AdvanceTimer()
@@ -85,11 +98,11 @@ public class Spawner : MonoBehaviour
         float r = Random.Range(0, spawnBoundX * 2);
         spawnPos = new Vector3(0 - spawnBoundX + r, transform.position.y, transform.position.z);
 
-        float newSpeed = Random.Range(initSpeedMin, initSpeedMax) + initSpeedInc;
+        float newSpeed = Random.Range(config.initSpeedMin, config.initSpeedMax);
         
-        float newRotSpeed = Random.Range(initRotSpeedMin, initRotSpeedMax);
+        float newRotSpeed = Random.Range(config.initRotSpeedMin, config.initRotSpeedMax);
 
-        Vector3 newDirection = Quaternion.AngleAxis(Random.Range(-initAngleMax, initAngleMax), Vector3.forward) * Vector3.up;
+        Vector3 newDirection = Quaternion.AngleAxis(Random.Range(-config.initAngleMax, config.initAngleMax), Vector3.forward) * Vector3.up;
 
         newVelocity = newSpeed * newDirection;
 
