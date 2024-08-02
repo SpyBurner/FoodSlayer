@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   point: 20
+  prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
   mesh: {fileID: -3645058858012553506, guid: e2b7f90ac7c0a7a47b916bda34c4cd64, type: 3}
   slicedMeshes:
   - {fileID: 932811825096193042, guid: 040cdd097a25ee54ca863cb0f53caa15, type: 3}

@@ -9,6 +9,10 @@ public class GameConfig : ScriptableObject
     public int maxLevel = 10;
     public int pointPerLevel;
 
+    [Header("HP")]
+    public int startHP = 3;
+    public int maxHP = 5;
+
     [Header("Spawn rate")]
     public float spawnRate; //in seconds
     public float spawnRateInc;

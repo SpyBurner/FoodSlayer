@@ -11,8 +11,12 @@ public class Spawner : MonoBehaviour
     public IntVariable CurrentScore;
     public GameEvent ScoreChanged;
 
-    [Header("Object Prefab")]
-    [SerializeField] private GameObject prefab;
+    [Header("Gojo guarantee")]
+    private int GojoCount;
+
+    [Header("HP update")]
+    public IntVariable HP;
+    public GameEvent HPChanged;
 
     [Header("Object information")]
     [SerializeField] private FoodInfo[] objInfo;
@@ -27,6 +31,8 @@ public class Spawner : MonoBehaviour
     private MeshRenderer meshRenderer;
     private float spawnBoundX;
     private GameObject holder;
+
+    private GameObject prefab;
 
     [Header ("Extra info")]
     [SerializeField] private float spawnTimer;
@@ -108,10 +114,15 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        
         FoodInfo info = objInfo[newObjIndex];
 
-        GameObject newObj = Instantiate(prefab, spawnPos, Quaternion.identity, holder.transform);
+        if (CurrentScore.Value / 1000 > GojoCount)
+        {
+            GojoCount++;
+            info = objInfo[0];
+        }
+
+        GameObject newObj = Instantiate(info.prefab, spawnPos, Quaternion.identity, holder.transform);
         Food food =  newObj.GetComponent<Food>();
         food.info = info;
         food.Initialize(newVelocity, newAngularVelocity);
@@ -120,6 +131,15 @@ public class Spawner : MonoBehaviour
         food.CurrentScore = CurrentScore;
 
         food.foodHolder = holder;
+
+        food.HP = HP;
+        food.HpChanged = HPChanged;
     }
 
+
+    public void OnLose()
+    {
+        Destroy(holder);
+        Destroy(gameObject);
+    }
 }

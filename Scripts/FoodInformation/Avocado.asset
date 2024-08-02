@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Avocado
   m_EditorClassIdentifier: 
   point: 20
+  prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
   mesh: {fileID: 3055828139153084408, guid: 016adedb898ec5a4fbb353680bd0718d, type: 3}
   slicedMeshes:
   - {fileID: -1059722790129114535, guid: a13b08b6949e6854ca3c68f597354205, type: 3}

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Ham
   m_EditorClassIdentifier: 
   point: 5
+  prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
   mesh: {fileID: 9161984268042380430, guid: 0b10d77383155574a93d985c722036a2, type: 3}
   slicedMeshes:
   - {fileID: 4354154126254062935, guid: 73cc46ed49d79e943ba1d1bfc29bdc9a, type: 3}
   - {fileID: 4354154126254062935, guid: 73cc46ed49d79e943ba1d1bfc29bdc9a, type: 3}
   scale: 1.5
   cutPlaneNormalVec: {x: 0, y: 0, z: 1}
+  healAmount: 0

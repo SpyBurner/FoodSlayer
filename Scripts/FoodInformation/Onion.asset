@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Onion
   m_EditorClassIdentifier: 
   point: 20
+  prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
   mesh: {fileID: 3209097409963520316, guid: 5e4b54abd58762044b5fb39402b69e82, type: 3}
   slicedMeshes:
   - {fileID: 3787738863398048871, guid: e9ad23234b8e5654ea8876c430f17870, type: 3}

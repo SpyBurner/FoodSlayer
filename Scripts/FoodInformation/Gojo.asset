@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af5c906417badd4c996b0ce56261014, type: 3}
-  m_Name: Lemon
+  m_Name: Gojo
   m_EditorClassIdentifier: 
-  point: 20
-  prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
-  mesh: {fileID: 3294163407509072224, guid: f882d007540f6fd4e93c437c1b765c49, type: 3}
+  point: 1
+  prefab: {fileID: 5976012215088137549, guid: 4d706849c92418c479068459abfd8ebb, type: 3}
+  mesh: {fileID: 3915501047941999884, guid: 8c024b09dad27464296b564c22eec8b3, type: 3}
   slicedMeshes:
-  - {fileID: 6481670094142592565, guid: c1548c2eec6da2544acb291b805efdfa, type: 3}
-  - {fileID: 6481670094142592565, guid: c1548c2eec6da2544acb291b805efdfa, type: 3}
+  - {fileID: -5433936924052340461, guid: 8c024b09dad27464296b564c22eec8b3, type: 3}
+  - {fileID: -6044621815572569923, guid: 8c024b09dad27464296b564c22eec8b3, type: 3}
   scale: 1
   cutPlaneNormalVec: {x: 0, y: 1, z: 0}
+  healAmount: 1

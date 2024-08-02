@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mushroom
   m_EditorClassIdentifier: 
   point: 50
+  prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
   mesh: {fileID: -7588155868070637639, guid: 2dec450cb4b7bfa46a36dd3e9debc96f, type: 3}
   slicedMeshes:
   - {fileID: -4889993581187329437, guid: e9f904c977eb821429a214dbcf1397a1, type: 3}

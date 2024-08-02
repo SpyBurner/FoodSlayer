@@ -15,14 +15,16 @@ MonoBehaviour:
   startLevel: 0
   maxLevel: 100
   pointPerLevel: 100
-  spawnRate: 0.25
+  startHP: 3
+  maxHP: 5
+  spawnRate: 0.3
   spawnRateInc: 0.05
   maxSpawnRate: 1.25
-  spawnAmount: 1
-  spawnAmountInc: 0.2
+  spawnAmount: 1.2
+  spawnAmountInc: 0.05
   maxSpawnAmount: 5
-  initSpeedMin: 4
+  initSpeedMin: 3.8
   initSpeedMax: 5.5
   initRotSpeedMin: 5
-  initRotSpeedMax: 50
+  initRotSpeedMax: 100
   initAngleMax: 20
