@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af5c906417badd4c996b0ce56261014, type: 3}
+  m_Name: Coconut
+  m_EditorClassIdentifier: 
+  point: 40
+  prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
+  mesh: {fileID: 745218288965529717, guid: 5a7c9c123cc77d94989b266d1da68ffa, type: 3}
+  slicedMeshes:
+  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
+  - {fileID: -7603338226466848312, guid: 8928c391567e70544be64530e0db457b, type: 3}
+  scale: 0.8
+  cutPlaneNormalVec: {x: 0, y: 1, z: 0}
+  healAmount: 0

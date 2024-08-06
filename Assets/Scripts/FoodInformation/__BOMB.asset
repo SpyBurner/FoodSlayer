@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af5c906417badd4c996b0ce56261014, type: 3}
+  m_Name: __BOMB
+  m_EditorClassIdentifier: 
+  point: 0
+  prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
+  mesh: {fileID: 5628149812592751402, guid: dc2fea2fc68146a4cb3f394dc9db86e2, type: 3}
+  slicedMeshes:
+  - {fileID: 4644449849006899879, guid: f2b5c67e6410ca64ca90cbd0ff4891dc, type: 3}
+  - {fileID: 8567099751650672141, guid: ab52c1e2ebf16274dade20bac4ed6d60, type: 3}
+  scale: 1
+  cutPlaneNormalVec: {x: 0, y: 1, z: 0}
+  healAmount: -5

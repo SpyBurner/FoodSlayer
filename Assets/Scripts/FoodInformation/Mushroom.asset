@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af5c906417badd4c996b0ce56261014, type: 3}
+  m_Name: Mushroom
+  m_EditorClassIdentifier: 
+  point: 50
+  prefab: {fileID: 5830162930301087323, guid: 844469023395a7c429e0590ebea99ae3, type: 3}
+  mesh: {fileID: -7588155868070637639, guid: 2dec450cb4b7bfa46a36dd3e9debc96f, type: 3}
+  slicedMeshes:
+  - {fileID: -4889993581187329437, guid: e9f904c977eb821429a214dbcf1397a1, type: 3}
+  - {fileID: -4889993581187329437, guid: e9f904c977eb821429a214dbcf1397a1, type: 3}
+  scale: 0.5
+  cutPlaneNormalVec: {x: 1, y: 0, z: 0}
+  healAmount: 0
