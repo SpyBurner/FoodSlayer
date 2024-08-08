@@ -11,12 +11,12 @@ public class Destrroyer : MonoBehaviour
         {
             Food food = collision.gameObject.GetComponent<Food>();
 
-            if (food.isCutable)
+            if (food.isCutable && food.info.healAmount >= 0)
             {
                 OnFoodDropped.Raise();
             }
-        }
-        if (collision.gameObject.layer != LayerMask.NameToLayer("Attack"))
+
             Destroy(collision.gameObject);
+        }
     }
 }

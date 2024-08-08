@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class UIController : PersistentSingleton<UIController>
+public class GameUIController : PersistentSingleton<GameUIController>
 {
     public Text scoreText;
     public IntReference currentScore;

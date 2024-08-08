@@ -50,9 +50,11 @@ public class Food : MonoBehaviour
         rb.AddForce(gravity * gravityScale * Time.deltaTime, ForceMode.Impulse);
     }
 
-    public void OnHit(Vector3 hitDirection)
+    public void OnHit(Vector3 hitVelocity, SlicerInfo slicerInfo)
     {
         if (!isCutable) return;
+
+        Vector3 hitDirection = hitVelocity.normalized;
 
         hitDirection.Normalize();
 
@@ -62,7 +64,7 @@ public class Food : MonoBehaviour
         Vector3 splitForceDirection = Quaternion.Euler(0, 0, 90) * hitDirection;
         splitForceDirection.Normalize();
 
-        CurrentScore.Value += info.point;
+        CurrentScore.Value += (int)(info.point * slicerInfo.pointMultiplier);
         ScoreChanged.Raise();
 
         //Cut generating
@@ -72,7 +74,7 @@ public class Food : MonoBehaviour
         Rigidbody otherRb = otherHalf.GetOrAddComponent<Rigidbody>();
         float meshYSize = meshFilter.mesh.bounds.size.y / 2;
 
-        Debug.Log("Hit: " + hitDirection + ", Split: " + splitForceDirection);
+        //Debug.Log("Hit: " + hitDirection + ", Split: " + splitForceDirection);
 
         //Cut rotation
 
@@ -109,8 +111,8 @@ public class Food : MonoBehaviour
         otherRb.velocity = rb.velocity;
 
         //Cut add splitting
-        rb.AddForce(-splitForceDirection * 50);
-        otherRb.AddForce(splitForceDirection * 50);
+        rb.AddForce(-splitForceDirection * hitVelocity.magnitude);
+        otherRb.AddForce(splitForceDirection * hitVelocity.magnitude);
     }
 
     private GameObject GenerateCutPieces()

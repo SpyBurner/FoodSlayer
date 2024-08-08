@@ -8,11 +8,17 @@ public class SlicerInfo : ScriptableObject
     [Header("Visual effects")]
     [Range(0f, 1f)]
     public float bluntness;
-    public Color trailColor;
+    public Gradient trailColor;
     public Mesh trailShape;
 
     [Header("Technical effects")]
     public float swingSpeed; //m/s
     public float pointMultiplier;
     public float ultimateChargePerHit;
+
+    [Header("Prefab")]
+    public GameObject slicerPrefab;
+
+    [Header("Display")]
+    public string Description;
 }

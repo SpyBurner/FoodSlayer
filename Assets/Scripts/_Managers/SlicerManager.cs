@@ -6,12 +6,10 @@ using UnityEngine;
 
 public class SlicerManager : PersistentSingleton<SlicerManager>
 {
-    [Header("Slicer prefab")]
-    public GameObject slicerPrefab;
 
     [Header("Attack set")]
-    public SlicerInfo slicerInfo;
-    public UltimateInfo UltimateInfo;
+    private SlicerInfo slicerInfo;
+    private UltimateInfo ultimateInfo;
 
     [Header("Touch detection")]
     public LayerMask whatToHit;
@@ -19,21 +17,25 @@ public class SlicerManager : PersistentSingleton<SlicerManager>
     [Header ("Debug info")]
     [SerializeField]
     private Vector3 _lastPosition;
-    private Rigidbody _rb;
 
     private GameObject _slicer;
+    private SlicerBase _slicerScript;
+
+    private GameObject gameManager;
 
     private void Start()
     {
+        gameManager = GameObject.Find("GameManager");
+        slicerInfo = gameManager.GetComponent<GameManager>().config.chosenSlicer;
+        ultimateInfo = gameManager.GetComponent<GameManager>().config.chosenUltimate;
+
         _lastPosition = new Vector3(0, 0, transform.position.z);
 
-        _slicer = Instantiate(slicerPrefab, _lastPosition, Quaternion.identity, transform);
-        _slicer.GetComponent<Slicer>().INIT(slicerInfo);
-        DeactivateSlicer();
+        _slicer = Instantiate(slicerInfo.slicerPrefab, _lastPosition, Quaternion.identity, transform);
+        _slicerScript = _slicer.GetComponent<SlicerBase>();
+        _slicerScript.INIT(slicerInfo);
 
-        _rb = _slicer.GetComponent<Rigidbody>();
-        _rb.constraints = RigidbodyConstraints.FreezeRotation & RigidbodyConstraints.FreezePositionZ;
-        _rb.useGravity = false;
+        DeactivateSlicer();
     }
 
     private bool isSlicing;
@@ -56,13 +58,11 @@ public class SlicerManager : PersistentSingleton<SlicerManager>
 
     private void InstantMoveSlicer()
     {
-        _slicer.transform.position = _lastPosition;
+        _slicerScript.InstantMove(_lastPosition);
     }
     private void MoveSlicer()
     {
-        if (Vector3.Distance(_slicer.transform.position, _lastPosition) <= Mathf.Epsilon) return;
-
-        _rb.velocity = ((_lastPosition - _slicer.transform.position) * slicerInfo.swingSpeed * 100) * Time.deltaTime;
+        _slicerScript.GetComponent<SlicerBase>().Move(_lastPosition);
     }
 
     private void UpdatePosition()

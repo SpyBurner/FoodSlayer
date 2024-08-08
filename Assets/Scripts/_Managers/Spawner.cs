@@ -146,7 +146,6 @@ public class Spawner : MonoBehaviour
 
     public void OnLose()
     {
-        Destroy(holder);
         Destroy(gameObject);
     }
 }

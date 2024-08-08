@@ -4,6 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Game Config", menuName = "My assets/GameConfig")]
 public class GameConfig : ScriptableObject
 {
+    [Header("Weapon choices")]
+    public SlicerInfo chosenSlicer;
+    public UltimateInfo chosenUltimate;
+
     [Header("Level")]
     public int startLevel = 0;
     public int maxLevel = 10;
