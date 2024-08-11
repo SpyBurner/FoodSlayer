@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SlicerManager : PersistentSingleton<SlicerManager>
+public class WeaponManager : Singleton<WeaponManager>
 {
 
     [Header("Attack set")]
@@ -35,7 +35,7 @@ public class SlicerManager : PersistentSingleton<SlicerManager>
         _slicerScript = _slicer.GetComponent<SlicerBase>();
         _slicerScript.INIT(slicerInfo);
 
-        DeactivateSlicer();
+        SetActiveSlicer(false);
     }
 
     private bool isSlicing;
@@ -47,12 +47,11 @@ public class SlicerManager : PersistentSingleton<SlicerManager>
 
             if (!isSlicing) InstantMoveSlicer();
             else MoveSlicer();
-
-            ActivateSlicer();
+            SetActiveSlicer(true);
         }
         else
         {
-            DeactivateSlicer();
+            SetActiveSlicer(false);
         }
     }
 
@@ -62,7 +61,7 @@ public class SlicerManager : PersistentSingleton<SlicerManager>
     }
     private void MoveSlicer()
     {
-        _slicerScript.GetComponent<SlicerBase>().Move(_lastPosition);
+        _slicerScript.Move(_lastPosition);
     }
 
     private void UpdatePosition()
@@ -88,17 +87,10 @@ public class SlicerManager : PersistentSingleton<SlicerManager>
         _lastPosition = newPosition;
     }
 
-    private void ActivateSlicer()
+    private void SetActiveSlicer(bool active)
     {
-        _slicer.SetActive(true);
-        isSlicing = true;
+        _slicerScript.SetActive(active);
+        isSlicing = active;
     }
-
-    private void DeactivateSlicer()
-    {
-        _slicer.SetActive(false);
-        isSlicing = false;
-    }
-
 
 }

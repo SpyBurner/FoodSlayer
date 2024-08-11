@@ -15,17 +15,17 @@ MonoBehaviour:
   bluntness: 1
   trailColor:
     serializedVersion: 2
-    key0: {r: 0, g: 1, b: 0.7288306, a: 0.99607843}
-    key1: {r: 0, g: 1, b: 0.476691, a: 0.6745098}
-    key2: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 1, g: 0.04948451, b: 0, a: 0.99607843}
+    key1: {r: 0.93333334, g: 0.44001523, b: 0.06666663, a: 0.6745098}
+    key2: {r: 0, g: 1, b: 0.476691, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 19352
-    ctime1: 65535
-    ctime2: 0
+    ctime1: 36931
+    ctime2: 65535
     ctime3: 0
     ctime4: 0
     ctime5: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   trailShape: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   swingSpeed: 2

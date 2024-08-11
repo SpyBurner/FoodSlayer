@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7dae2a2747cd648acbbd7388071509, type: 3}
   m_Name: DefaultConfig
   m_EditorClassIdentifier: 
-  chosenSlicer: {fileID: 11400000, guid: ac8299db6cbccdd4896377063098c0b9, type: 2}
+  chosenSlicer: {fileID: 11400000, guid: 731dadb5ddfe11a4eadecb213354c714, type: 2}
   chosenUltimate: {fileID: 11400000, guid: 9d90acc95bbf4a2409cb3c1fbd77b155, type: 2}
   startLevel: 0
   maxLevel: 100

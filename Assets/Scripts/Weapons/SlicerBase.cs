@@ -25,6 +25,10 @@ public class SlicerBase : MonoBehaviour
         _rb.constraints = RigidbodyConstraints.FreezeRotation & RigidbodyConstraints.FreezePositionZ;
         _rb.useGravity = false;
     }
+    private void Update()
+    {
+        Debug.Log(_rb.velocity.magnitude);   
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -54,5 +58,16 @@ public class SlicerBase : MonoBehaviour
     public void InstantMove(Vector3 lastPosition)
     {
         transform.position = lastPosition;
+    }
+
+    public void SetActive(bool active)
+    {
+        gameObject.GetComponent<Collider>().enabled = active;
+        gameObject.GetComponent<TrailRenderer>().enabled = active;
+    }
+
+    private void OnDisable()
+    {
+        _rb.velocity = Vector3.zero;
     }
 }
